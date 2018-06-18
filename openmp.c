@@ -1,6 +1,6 @@
 #include "openmp.h"
-#include "string_utilities.h"
 
+/*
 static int wc(char *docname){
     char *doc = string_from_file(docname);
     if (!doc) return 0;
@@ -11,6 +11,7 @@ static int wc(char *docname){
     ok_array_free(words);
     return out;
 }
+*/
 
 void do_openmp_test() {
 
