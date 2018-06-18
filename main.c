@@ -50,11 +50,11 @@ int map_create(lua_State *lua){
     lua_Integer w = luaL_checkinteger(lua, 1);
     lua_Integer h = luaL_checkinteger(lua, 2);
 
-    unsigned char *map = malloc(w * h);
+    unsigned char *map = malloc((size_t) (w * h));
 
     int n;
     for(n = 0; n != w * h; n++){
-        map[n] = n % 10;
+        map[n] = (unsigned char) (n % 10);
     }
 
     lua_pushlightuserdata(lua, map);
