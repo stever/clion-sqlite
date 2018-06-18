@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.5) # NOTE: Ubuntu 16.04 LTS provides CMake 3.5.1
 project(CLionSQLite C)
 
 set(CMAKE_C_STANDARD 11)
