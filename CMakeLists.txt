@@ -6,6 +6,8 @@ set(CMAKE_C_STANDARD 11)
 add_executable(${PROJECT_NAME} main.c)
 
 if (NOT WIN32)
+    # sudo apt install sqlite3 libsqlite3-dev
+    # sudo apt install lua5.1 liblua5.1-0-dev
     target_link_libraries(${PROJECT_NAME} LINK_PUBLIC sqlite3)
     target_link_libraries(${PROJECT_NAME} LINK_PUBLIC lua5.1)
 else ()
