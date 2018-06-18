@@ -3,7 +3,7 @@ project(CLionSQLite C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(${PROJECT_NAME} main.c)
+add_executable(${PROJECT_NAME} main.c lua.c lua.h sqlite.c sqlite.h)
 
 if (NOT WIN32)
     # sudo apt install sqlite3 libsqlite3-dev
