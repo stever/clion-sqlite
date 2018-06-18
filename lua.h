@@ -7,7 +7,5 @@
 #include <lua5.1/lualib.h>
 
 void do_lua_test();
-int map_create(lua_State *lua);
-int map_slice(lua_State *lua);
 
 #endif //CLIONSQLITE_LUA_H
