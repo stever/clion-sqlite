@@ -24,11 +24,11 @@ void do_sqlite_test(char *filename) {
         fprintf(stderr, "Opened database successfully\n");
     }
 
-    char *zErrMsg = 0;
-    rc = sqlite3_exec(db, SQL_CREATE, NULL, 0, &zErrMsg);
+    char *errMsg = 0;
+    rc = sqlite3_exec(db, SQL_CREATE, NULL, 0, &errMsg);
     if (rc != SQLITE_OK) {
-        fprintf(stderr, "SQL error: %s\n", zErrMsg);
-        sqlite3_free(zErrMsg);
+        fprintf(stderr, "SQL error: %s\n", errMsg);
+        sqlite3_free(errMsg);
     } else {
         fprintf(stdout, "Tables created successfully\n");
     }

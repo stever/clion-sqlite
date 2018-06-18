@@ -3,13 +3,21 @@ project(CLionSQLite C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(${PROJECT_NAME} main.c lua.c lua.h sqlite.c sqlite.h)
+add_executable(${PROJECT_NAME}
+        main.c
+        lua.c lua.h
+        sqlite.c sqlite.h
+        openmp.c openmp.h
+        string_utilities.c string_utilities.h
+        )
 
 if (NOT WIN32)
     # sudo apt install sqlite3 libsqlite3-dev
     # sudo apt install lua5.1 liblua5.1-0-dev
+    # sudo apt install libglib2.0-dev
     target_link_libraries(${PROJECT_NAME} LINK_PUBLIC sqlite3)
     target_link_libraries(${PROJECT_NAME} LINK_PUBLIC lua5.1)
+    target_link_libraries(${PROJECT_NAME} LINK_PUBLIC glib-2.0)
 else ()
     # NOTE: WIN32 is true if Windows is either 32-bit or 64-bit.
     include_directories(${PROJECT_NAME} "${PROJECT_SOURCE_DIR}/include")
