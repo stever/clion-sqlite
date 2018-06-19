@@ -1,3 +1,6 @@
+*.swp
 .idea/
 build/
 cmake-build-debug/
+/include/library.h
+/libs/libCLionSQLite.dll
