@@ -3,6 +3,7 @@
 .vs/
 bin/
 build/
+cmake/
 cmake-build-debug/
 obj/
 /include/library.h
