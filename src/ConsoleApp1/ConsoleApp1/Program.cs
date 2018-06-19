@@ -11,8 +11,15 @@ namespace ConsoleApp1
         private static void Main(string[] args)
         {
             Console.WriteLine("Calling library function");
-            hello_library();
-            Console.WriteLine("Finished");
+            try
+            {
+                hello_library();
+                Console.WriteLine("Sucess");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception: {ex.Message}");
+            }
         }
     }
 }
