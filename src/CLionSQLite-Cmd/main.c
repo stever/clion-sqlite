@@ -11,6 +11,6 @@ int main(int argc, char *argv[]) {
     hello_library();
     hello("Steve");
     int result = calc_double(3);
-    printf("calc_double(3) = %d", result);
+    printf("calc_double(3) = %d\n", result);
     return 0;
 }
