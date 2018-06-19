@@ -11,14 +11,18 @@ add_custom_command(
         ${PROJECT_SOURCE_DIR}/library.h
         ${PROJECT_SOURCE_DIR}/../../include)
 
-add_custom_command(
-        TARGET ${PROJECT_NAME} POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy
-        ${CMAKE_CURRENT_BINARY_DIR}/libCLionSQLite.dll
-        ${PROJECT_SOURCE_DIR}/../../libs)
+if (EXISTS ${CMAKE_CURRENT_BINARY_DIR}/libCLionSQLite.dll)
+    add_custom_command(
+            TARGET ${PROJECT_NAME} POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy
+            ${CMAKE_CURRENT_BINARY_DIR}/libCLionSQLite.dll
+            ${PROJECT_SOURCE_DIR}/../../libs)
+endif ()
 
-add_custom_command(
-        TARGET ${PROJECT_NAME} POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy
-        ${CMAKE_CURRENT_BINARY_DIR}/libCLionSQLite.so
-        ${PROJECT_SOURCE_DIR}/../../libs)
+if (EXISTS ${CMAKE_CURRENT_BINARY_DIR}/libCLionSQLite.so)
+    add_custom_command(
+            TARGET ${PROJECT_NAME} POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy
+            ${CMAKE_CURRENT_BINARY_DIR}/libCLionSQLite.so
+            ${PROJECT_SOURCE_DIR}/../../libs)
+endif ()

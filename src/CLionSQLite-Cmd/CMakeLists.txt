@@ -22,8 +22,8 @@ if (NOT WIN32)
     target_link_libraries(${PROJECT_NAME} sqlite3)
     target_link_libraries(${PROJECT_NAME} lua5.1)
 
+    # Include the library.
     include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../include)
-    link_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../libs)
     target_link_libraries(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/../../libs/libCLionSQLite.so)
 
 else ()
