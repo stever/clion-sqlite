@@ -1,5 +1,9 @@
 #include "sqlite.h"
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <sqlite3.h>
+
 static const char SQL_CREATE[];
 
 /*

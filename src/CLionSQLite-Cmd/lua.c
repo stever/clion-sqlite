@@ -1,5 +1,10 @@
 #include "lua.h"
 
+#include <stdlib.h>
+#include <lua5.1/lua.h>
+#include <lua5.1/lauxlib.h>
+#include <lua5.1/lualib.h>
+
 static int map_create(lua_State *lua) {
     lua_Integer w = luaL_checkinteger(lua, 1);
     lua_Integer h = luaL_checkinteger(lua, 2);
