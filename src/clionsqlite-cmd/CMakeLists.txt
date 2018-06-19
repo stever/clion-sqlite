@@ -24,9 +24,9 @@ if (NOT WIN32)
     target_link_libraries(${PROJECT_NAME} LINK_PUBLIC lua5.1)
 else ()
     # NOTE: WIN32 is true if Windows is either 32-bit or 64-bit.
-    include_directories(${PROJECT_NAME} "${PROJECT_SOURCE_DIR}/include")
-    target_link_libraries(${PROJECT_NAME} "${PROJECT_SOURCE_DIR}/libs/sqlite3.dll")
-    target_link_libraries(${PROJECT_NAME} "${PROJECT_SOURCE_DIR}/libs/lua5.1.dll")
+    include_directories(${PROJECT_NAME} "${PROJECT_SOURCE_DIR}/../../include")
+    target_link_libraries(${PROJECT_NAME} "${PROJECT_SOURCE_DIR}/../../libs/sqlite3.dll")
+    target_link_libraries(${PROJECT_NAME} "${PROJECT_SOURCE_DIR}/../../libs/lua5.1.dll")
 
     # Copy the DLLs to the build output folder.
     add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
