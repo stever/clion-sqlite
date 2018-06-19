@@ -3,4 +3,4 @@
 
 void do_lua_test();
 
-#endif //CLIONSQLITE_LUA_H
+#endif

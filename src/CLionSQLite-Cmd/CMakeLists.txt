@@ -22,10 +22,9 @@ if (NOT WIN32)
     # sudo apt install lua5.1 liblua5.1-0-dev
     target_link_libraries(${PROJECT_NAME} LINK_PUBLIC sqlite3)
     target_link_libraries(${PROJECT_NAME} LINK_PUBLIC lua5.1)
+    # TODO: Use the compiled library in Ubuntu.
 else ()
     # NOTE: WIN32 is true if Windows is either 32-bit or 64-bit.
-    configure_file("${CMAKE_CURRENT_SOURCE_DIR}/../CLionSQLite/library.h" "${CMAKE_CURRENT_SOURCE_DIR}/../../include" COPYONLY)
-    configure_file("${CMAKE_CURRENT_SOURCE_DIR}/../CLionSQLite/cmake-build-debug/libCLionSQLite.dll" "${CMAKE_CURRENT_SOURCE_DIR}/../../libs" COPYONLY)
     include_directories(${PROJECT_NAME} "${CMAKE_CURRENT_SOURCE_DIR}/../../include")
     target_link_libraries(${PROJECT_NAME} "${CMAKE_CURRENT_SOURCE_DIR}/../../libs/sqlite3.dll")
     target_link_libraries(${PROJECT_NAME} "${CMAKE_CURRENT_SOURCE_DIR}/../../libs/lua5.1.dll")

@@ -3,4 +3,4 @@
 
 void do_openmp_test();
 
-#endif //CLIONSQLITE_OPENMP_H
+#endif

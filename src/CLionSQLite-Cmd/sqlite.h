@@ -3,4 +3,4 @@
 
 void do_sqlite_test(char *filename);
 
-#endif //CLIONSQLITE_SQLITE_H
+#endif
