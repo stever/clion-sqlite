@@ -8,7 +8,7 @@ void hello_library() {
 
 void hello(const char *s)
 {
-    printf("Hello %s\n", s);
+    printf("Hello %s :)\n", s);
 }
 
 int calc_double(int x)

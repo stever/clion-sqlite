@@ -20,7 +20,7 @@ namespace ConsoleApp1
             try
             {
                 hello_library();
-                hello("test");
+                hello("Steve");
                 Console.WriteLine($"calc_double(3) = {calc_double(3)}");
             }
             catch (Exception ex)

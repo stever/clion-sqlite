@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "sqlite.h"
 #include "lua.h"
 #include "openmp.h"
@@ -8,5 +9,8 @@ int main(int argc, char *argv[]) {
     do_lua_test();
     do_sqlite_test("test.db");
     hello_library();
+    hello("Steve");
+    int result = calc_double(3);
+    printf("calc_double(3) = %d", result);
     return 0;
 }
