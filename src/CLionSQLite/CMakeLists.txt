@@ -5,24 +5,20 @@ set(CMAKE_C_STANDARD 11)
 
 add_library(CLionSQLite SHARED library.c library.h)
 
-add_custom_command(
-        TARGET ${PROJECT_NAME} POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy
-        ${PROJECT_SOURCE_DIR}/library.h
-        ${PROJECT_SOURCE_DIR}/../../include)
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+	COMMAND ${CMAKE_COMMAND} -E copy 
+	${PROJECT_SOURCE_DIR}/library.h 
+	${PROJECT_SOURCE_DIR}/../../include)
 
-if (EXISTS ${CMAKE_CURRENT_BINARY_DIR}/libCLionSQLite.dll)
-    add_custom_command(
-            TARGET ${PROJECT_NAME} POST_BUILD
-            COMMAND ${CMAKE_COMMAND} -E copy
-            ${CMAKE_CURRENT_BINARY_DIR}/libCLionSQLite.dll
-            ${PROJECT_SOURCE_DIR}/../../libs)
+if (NOT WIN32)
+	add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+		COMMAND ${CMAKE_COMMAND} -E copy 
+		${CMAKE_CURRENT_BINARY_DIR}/libCLionSQLite.so 
+		${PROJECT_SOURCE_DIR}/../../libs)
+else ()
+	add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+		COMMAND ${CMAKE_COMMAND} -E copy 
+		${CMAKE_CURRENT_BINARY_DIR}/libCLionSQLite.dll 
+		${PROJECT_SOURCE_DIR}/../../libs)
 endif ()
 
-if (EXISTS ${CMAKE_CURRENT_BINARY_DIR}/libCLionSQLite.so)
-    add_custom_command(
-            TARGET ${PROJECT_NAME} POST_BUILD
-            COMMAND ${CMAKE_COMMAND} -E copy
-            ${CMAKE_CURRENT_BINARY_DIR}/libCLionSQLite.so
-            ${PROJECT_SOURCE_DIR}/../../libs)
-endif ()
