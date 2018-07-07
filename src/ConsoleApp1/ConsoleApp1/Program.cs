@@ -5,13 +5,13 @@ namespace ConsoleApp1
 {
     internal static class Program
     {
-        [DllImport(@"..\..\..\..\..\..\libs\libCLionSQLite.dll")]
+        [DllImport("CLionSQLite")]
         private static extern void hello_library();
 
-        [DllImport(@"..\..\..\..\..\..\libs\libCLionSQLite.dll")]
+        [DllImport("CLionSQLite")]
         private static extern void hello(string s);
 
-        [DllImport(@"..\..\..\..\..\..\libs\libCLionSQLite.dll")]
+        [DllImport("CLionSQLite")]
         private static extern int calc_double(int x);
 
         private static void Main()
