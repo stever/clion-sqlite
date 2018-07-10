@@ -18,7 +18,7 @@ if (NOT WIN32)
 else ()
 	add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
 		COMMAND ${CMAKE_COMMAND} -E copy 
-		${CMAKE_CURRENT_BINARY_DIR}/libCLionSQLite.dll 
-		${PROJECT_SOURCE_DIR}/../../libs)
+		${CMAKE_CURRENT_BINARY_DIR}/libCLionSQLite.dll
+		${PROJECT_SOURCE_DIR}/../../libs/CLionSQLite.dll)
 endif ()
 
